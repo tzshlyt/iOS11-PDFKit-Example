@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13122.19" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.16"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="ThumbnailGridCell" customModule="PDF_Demo" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="100" height="150"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="100" height="150"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="i9n-DE-qXq">
+                        <rect key="frame" x="0.0" y="0.0" width="100" height="150"/>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="123" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5fO-qC-Ihb">
+                        <rect key="frame" x="30" y="119" width="40" height="21"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="SYd-q5-soz"/>
+                            <constraint firstAttribute="width" constant="40" id="qVE-8a-YBK"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
+                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                <integer key="value" value="5"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.shouldRasterize" value="YES"/>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="clipsToBounds" value="YES"/>
+                        </userDefinedRuntimeAttributes>
+                    </label>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="5fO-qC-Ihb" secondAttribute="bottom" constant="10" id="4wn-m0-noZ"/>
+                <constraint firstItem="5fO-qC-Ihb" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="I6V-NH-vBK"/>
+                <constraint firstItem="i9n-DE-qXq" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="NGu-2h-MCK"/>
+                <constraint firstItem="i9n-DE-qXq" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="Pg3-hD-H1N"/>
+                <constraint firstAttribute="trailing" secondItem="i9n-DE-qXq" secondAttribute="trailing" id="TBb-GR-Tf9"/>
+                <constraint firstAttribute="bottom" secondItem="i9n-DE-qXq" secondAttribute="bottom" id="vVQ-1I-wKF"/>
+            </constraints>
+            <size key="customSize" width="113" height="148"/>
+            <connections>
+                <outlet property="imageView" destination="i9n-DE-qXq" id="MAX-Eo-z5r"/>
+                <outlet property="pageLab" destination="5fO-qC-Ihb" id="TZs-Xk-Xwy"/>
+            </connections>
+            <point key="canvasLocation" x="66" y="-9"/>
+        </collectionViewCell>
+    </objects>
+</document>
