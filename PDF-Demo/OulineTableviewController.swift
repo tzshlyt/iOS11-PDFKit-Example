@@ -116,11 +116,12 @@ extension OulineTableviewController {
     
     func insertChirchen(parent: PDFOutline) {
         var tmpData: [PDFOutline] = []
-        let baseIndex = self.data.index(of: parent)
+        let baseIndex = self.data.firstIndex(of: parent)
         for index in 0..<parent.numberOfChildren {
-            let pdfOutline = parent.child(at: index)
-            pdfOutline.isOpen = false
-            tmpData.append(pdfOutline)
+            if let pdfOutline = parent.child(at: index) {
+                pdfOutline.isOpen = false
+                tmpData.append(pdfOutline)
+            }
         }
         self.data.insert(contentsOf: tmpData, at:baseIndex! + 1)
     }
@@ -131,20 +132,18 @@ extension OulineTableviewController {
         }
         
         for index in 0..<parent.numberOfChildren {
-            let node = parent.child(at: index)
-            
-            if node.numberOfChildren > 0 {
-                removeChildren(parent: node)
-                
-                // remove self
-                if let i = data.index(of: node) {
-                    data.remove(at: i)
-                }
-                
-            } else {
-                if self.data.contains(node) {
-                    if let i = data.index(of: node) {
+            if let node = parent.child(at: index) {
+                if node.numberOfChildren > 0 {
+                    removeChildren(parent: node)
+                    // remove self
+                    if let i = data.firstIndex(of: node) {
                         data.remove(at: i)
+                    }
+                } else {
+                    if self.data.contains(node) {
+                        if let i = data.firstIndex(of: node) {
+                            data.remove(at: i)
+                        }
                     }
                 }
             }

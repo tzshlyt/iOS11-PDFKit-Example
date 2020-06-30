@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		3F77F44C1F023BB4000732A9 /* OulineTableviewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F77F44A1F023BB4000732A9 /* OulineTableviewController.swift */; };
 		3F77F44D1F023BB4000732A9 /* OulineTableviewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F77F44B1F023BB4000732A9 /* OulineTableviewController.xib */; };
-		3FA8B1F61F10E27F00E2B1F6 /* sample.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 3FA8B1F51F10E27F00E2B1F6 /* sample.pdf */; };
 		3FD092361F0D249300D6C96F /* SearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD092351F0D249300D6C96F /* SearchTableViewController.swift */; };
 		3FD092391F0D24BA00D6C96F /* SearchViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD092371F0D24BA00D6C96F /* SearchViewCell.swift */; };
 		3FD0923A1F0D24BA00D6C96F /* SearchViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3FD092381F0D24BA00D6C96F /* SearchViewCell.xib */; };
@@ -23,6 +22,7 @@
 		3FEBE30F1F01E84F00DE2722 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FEBE30D1F01E84F00DE2722 /* LaunchScreen.storyboard */; };
 		3FEBE31E1F02057E00DE2722 /* ToolView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3FEBE31D1F02057E00DE2722 /* ToolView.xib */; };
 		3FEBE3201F0206C600DE2722 /* ToolView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FEBE31F1F0206C600DE2722 /* ToolView.swift */; };
+		3FF14BFB24AB2CCE001209ED /* sample.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 3FF14BFA24AB2CCE001209ED /* sample.pdf */; };
 		3FFD89EF1F02586C00966CCF /* OulineTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FFD89ED1F02586C00966CCF /* OulineTableViewCell.swift */; };
 		3FFD89F01F02586C00966CCF /* OulineTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3FFD89EE1F02586C00966CCF /* OulineTableViewCell.xib */; };
 /* End PBXBuildFile section */
@@ -30,7 +30,6 @@
 /* Begin PBXFileReference section */
 		3F77F44A1F023BB4000732A9 /* OulineTableviewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OulineTableviewController.swift; sourceTree = "<group>"; };
 		3F77F44B1F023BB4000732A9 /* OulineTableviewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OulineTableviewController.xib; sourceTree = "<group>"; };
-		3FA8B1F51F10E27F00E2B1F6 /* sample.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = sample.pdf; path = ../../../Downloads/sample.pdf; sourceTree = "<group>"; };
 		3FD092351F0D249300D6C96F /* SearchTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewController.swift; sourceTree = "<group>"; };
 		3FD092371F0D24BA00D6C96F /* SearchViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewCell.swift; sourceTree = "<group>"; };
 		3FD092381F0D24BA00D6C96F /* SearchViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchViewCell.xib; sourceTree = "<group>"; };
@@ -46,6 +45,7 @@
 		3FEBE3101F01E84F00DE2722 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3FEBE31D1F02057E00DE2722 /* ToolView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ToolView.xib; sourceTree = "<group>"; };
 		3FEBE31F1F0206C600DE2722 /* ToolView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolView.swift; sourceTree = "<group>"; };
+		3FF14BFA24AB2CCE001209ED /* sample.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = sample.pdf; sourceTree = "<group>"; };
 		3FFD89ED1F02586C00966CCF /* OulineTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OulineTableViewCell.swift; sourceTree = "<group>"; };
 		3FFD89EE1F02586C00966CCF /* OulineTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OulineTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -98,7 +98,7 @@
 				3FEBE30B1F01E84F00DE2722 /* Assets.xcassets */,
 				3FEBE30D1F01E84F00DE2722 /* LaunchScreen.storyboard */,
 				3FEBE3101F01E84F00DE2722 /* Info.plist */,
-				3FA8B1F51F10E27F00E2B1F6 /* sample.pdf */,
+				3FF14BFA24AB2CCE001209ED /* sample.pdf */,
 			);
 			path = "PDF-Demo";
 			sourceTree = "<group>";
@@ -130,11 +130,12 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0900;
-				LastUpgradeCheck = 0900;
+				LastUpgradeCheck = 1150;
 				ORGANIZATIONNAME = com.tzshlyt.demo;
 				TargetAttributes = {
 					3FEBE3001F01E84F00DE2722 = {
 						CreatedOnToolsVersion = 9.0;
+						LastSwiftMigration = 1150;
 					};
 				};
 			};
@@ -165,9 +166,9 @@
 				3FEBE30F1F01E84F00DE2722 /* LaunchScreen.storyboard in Resources */,
 				3FD0923A1F0D24BA00D6C96F /* SearchViewCell.xib in Resources */,
 				3FEBE31E1F02057E00DE2722 /* ToolView.xib in Resources */,
+				3FF14BFB24AB2CCE001209ED /* sample.pdf in Resources */,
 				3FEBE30C1F01E84F00DE2722 /* Assets.xcassets in Resources */,
 				3FEBE30A1F01E84F00DE2722 /* Main.storyboard in Resources */,
-				3FA8B1F61F10E27F00E2B1F6 /* sample.pdf in Resources */,
 				3F77F44D1F023BB4000732A9 /* OulineTableviewController.xib in Resources */,
 				3FFD89F01F02586C00966CCF /* OulineTableViewCell.xib in Resources */,
 			);
@@ -228,12 +229,16 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
@@ -283,12 +288,16 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
@@ -326,7 +335,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.tzshlyt.demo.PDF-Demo";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -340,7 +349,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.tzshlyt.demo.PDF-Demo";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

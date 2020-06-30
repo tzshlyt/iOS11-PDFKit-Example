@@ -34,7 +34,7 @@ class ViewController: UIViewController {
         self.view.addSubview(pdfview)
         
         self.view.addSubview(toolView)
-        toolView.bringSubview(toFront: self.view)
+        toolView.bringSubviewToFront(self.view)
         
         toolView.thumbBtn.addTarget(self, action: #selector(thumbBtnClick), for: .touchUpInside)
         toolView.outlineBtn.addTarget(self, action: #selector(outlineBtnClick), for: .touchUpInside)
@@ -45,8 +45,8 @@ class ViewController: UIViewController {
     }
     
     @objc func tapGesture(_ gestureRecognizer: UITapGestureRecognizer) {
-        UIView.animate(withDuration: CATransaction.animationDuration()) { [weak self] in
-            self?.toolView.alpha = 1 - (self?.toolView.alpha)!
+        UIView.animate(withDuration: CATransaction.animationDuration()) {
+            self.toolView.alpha = 1 - (self.toolView.alpha)
         }
     }
     
@@ -59,7 +59,7 @@ class ViewController: UIViewController {
         let height = width * 1.5
         
         layout.itemSize = CGSize(width: width, height: height)
-        layout.sectionInset = UIEdgeInsetsMake(10, 10, 10, 10)
+        layout.sectionInset = UIEdgeInsets.init(top: 10, left: 10, bottom: 10, right: 10)
         
         let thumbnailGridViewController = ThumbnailGridViewController(collectionViewLayout: layout)
         thumbnailGridViewController.pdfDocument = pdfdocument
@@ -72,7 +72,7 @@ class ViewController: UIViewController {
     @objc func outlineBtnClick(sender: UIButton) {
         
         if let pdfoutline = pdfdocument?.outlineRoot {
-            let oulineViewController = OulineTableviewController(style: UITableViewStyle.plain)
+            let oulineViewController = OulineTableviewController(style: UITableView.Style.plain)
             oulineViewController.pdfOutlineRoot = pdfoutline
             oulineViewController.delegate = self
             

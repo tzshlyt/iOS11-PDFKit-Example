@@ -1,6 +1,6 @@
 # iOS11-PDFKit-Example
 
-![Xcode 9 beta 1](https://img.shields.io/badge/Xcode-9%20beta%201-0080FF.svg) ![Swift 4](https://img.shields.io/badge/Swift-4-yellow.svg) ![iOS 11 beta 1](https://img.shields.io/badge/iOS-11%20beta%201-green.svg)
+![Xcode 9 beta 1](https://img.shields.io/badge/Xcode-9%20beta%201-0080FF.svg) ![Swift 5](https://img.shields.io/badge/Swift-5-yellow.svg) ![iOS 11 beta 1](https://img.shields.io/badge/iOS-11%20beta%201-green.svg)
 
 Code example for PDFKit on iOS 11.
 
