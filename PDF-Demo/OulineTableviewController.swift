@@ -17,7 +17,7 @@ protocol OulineTableviewControllerDelegate: class{
 class OulineTableviewController: UITableViewController {
     weak var delegate: OulineTableviewControllerDelegate?
     
-    open var pdfOutlineRoot: PDFOutline? {
+    var pdfOutlineRoot: PDFOutline? {
         didSet{
             for index in 0...(pdfOutlineRoot?.numberOfChildren)!-1 {
                 let pdfOutline = pdfOutlineRoot?.child(at: index)
@@ -28,7 +28,7 @@ class OulineTableviewController: UITableViewController {
         }
     }
     
-    var data = [PDFOutline]()
+    private var data = [PDFOutline]()
     
     override func viewDidLoad() {
         super.viewDidLoad()

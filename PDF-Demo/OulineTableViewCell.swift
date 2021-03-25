@@ -20,7 +20,7 @@ class OulineTableViewCell: UITableViewCell {
     override func layoutSubviews() {
         super.layoutSubviews()
         if indentationLevel == 0 {
-            textLab.font = UIFont.systemFont(ofSize: 17 )
+            textLab.font = UIFont.systemFont(ofSize: 17)
         } else {
             textLab.font = UIFont.systemFont(ofSize: 15)
         }

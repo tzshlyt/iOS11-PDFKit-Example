@@ -10,7 +10,7 @@ import UIKit
 
 class ThumbnailGridCell: UICollectionViewCell {
     
-    open var image: UIImage? = nil {
+    var image: UIImage? = nil {
         didSet {
             imageView.image = image
         }

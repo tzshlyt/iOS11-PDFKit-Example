@@ -14,11 +14,11 @@ protocol SearchTableViewControllerDelegate: class {
 }
 
 class SearchTableViewController: UITableViewController {
-    open var pdfDocument: PDFDocument?
+    var pdfDocument: PDFDocument?
     weak var delegate: SearchTableViewControllerDelegate?
     
-    var searchBar = UISearchBar()
-    var searchResults = [PDFSelection]()
+    private var searchBar = UISearchBar()
+    private var searchResults = [PDFSelection]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,7 +31,6 @@ class SearchTableViewController: UITableViewController {
         navigationItem.titleView = searchBar
         
         tableView.register(UINib(nibName: "SearchViewCell", bundle: nil), forCellReuseIdentifier: "SearchViewCell")
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -39,7 +38,6 @@ class SearchTableViewController: UITableViewController {
         searchBar.becomeFirstResponder()
     }
     
-
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -105,9 +103,7 @@ extension SearchTableViewController: UISearchBarDelegate {
     }
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        if searchText.count < 2 {
-            return
-        }
+        guard searchText.count >= 2 else { return }
         
         searchResults.removeAll()
         tableView.reloadData()

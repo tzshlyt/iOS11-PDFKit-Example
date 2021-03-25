@@ -14,12 +14,11 @@ protocol ThumbnailGridViewControllerDelegate: class{
 }
 
 class ThumbnailGridViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
-    open var pdfDocument: PDFDocument?
+    var pdfDocument: PDFDocument?
     weak var delegate: ThumbnailGridViewControllerDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel,
                                                            target: self,
                                                            action: #selector(closeBtnClick))
@@ -27,8 +26,6 @@ class ThumbnailGridViewController: UICollectionViewController, UICollectionViewD
         // Register cell classes
         collectionView?.register(UINib(nibName: "ThumbnailGridCell", bundle: nil),
                                  forCellWithReuseIdentifier: "ThumbnailGridCell")
-        
-        
         collectionView?.backgroundColor = UIColor.gray
     }
     
@@ -40,15 +37,12 @@ class ThumbnailGridViewController: UICollectionViewController, UICollectionViewD
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    
 }
 
 extension ThumbnailGridViewController {
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
-    
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return pdfDocument?.pageCount ?? 0
@@ -60,7 +54,6 @@ extension ThumbnailGridViewController {
         if let page = pdfDocument?.page(at: indexPath.item) {
             let thumbnail = page.thumbnail(of: cell.bounds.size, for: PDFDisplayBox.cropBox)
             cell.image = thumbnail
-            
             cell.pageLab.text = page.label
         }
         

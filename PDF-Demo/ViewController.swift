@@ -10,19 +10,19 @@ import UIKit
 import PDFKit
 
 class ViewController: UIViewController {
-    var pdfdocument: PDFDocument?
+    private var pdfdocument: PDFDocument?
     
-    var pdfview: PDFView!
-    var pdfthumbView: PDFThumbnailView!
-    let toolView = ToolView.instanceFromNib()
-    weak var observe : NSObjectProtocol?
+    private var pdfview: PDFView!
+    private var pdfThumbView: PDFThumbnailView!
+    private lazy var toolView = ToolView.instanceFromNib()
+    private weak var observe : NSObjectProtocol?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        toolView.frame = CGRect(x: 10, y: view.frame.height - 50, width: self.view.frame.width - 20, height: 40)
+        toolView.frame = CGRect(x: 10, y: view.frame.height - 50, width: view.frame.width - 20, height: 40)
         
-        pdfview = PDFView(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height))
+        pdfview = PDFView(frame: CGRect(x: 0, y: 50, width: view.frame.width, height: view.frame.height))
         
         let url = Bundle.main.url(forResource: "sample", withExtension: "pdf")
         pdfdocument = PDFDocument(url: url!)
@@ -30,11 +30,16 @@ class ViewController: UIViewController {
         pdfview.document = pdfdocument
         pdfview.displayMode = PDFDisplayMode.singlePageContinuous
         pdfview.autoScales = true
+        view.addSubview(pdfview)
         
-        self.view.addSubview(pdfview)
+        pdfThumbView = PDFThumbnailView(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: 50))
+        pdfThumbView.layoutMode = .horizontal
+        pdfThumbView.pdfView = pdfview
+        pdfThumbView.backgroundColor = UIColor.red
+        view.addSubview(pdfThumbView)
         
-        self.view.addSubview(toolView)
-        toolView.bringSubviewToFront(self.view)
+        view.addSubview(toolView)
+        toolView.bringSubviewToFront(view)
         
         toolView.thumbBtn.addTarget(self, action: #selector(thumbBtnClick), for: .touchUpInside)
         toolView.outlineBtn.addTarget(self, action: #selector(outlineBtnClick), for: .touchUpInside)
@@ -79,7 +84,6 @@ class ViewController: UIViewController {
             let nav = UINavigationController(rootViewController: oulineViewController)
             self.present(nav, animated: false, completion:nil)
         }
-        
     }
     
     @objc func searchBtnClick(sender: UIButton) {
@@ -119,4 +123,3 @@ extension ViewController: SearchTableViewControllerDelegate {
         pdfview.go(to: selection)
     }
 }
-
