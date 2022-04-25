@@ -9,7 +9,7 @@
 import UIKit
 import PDFKit
 
-protocol SearchTableViewControllerDelegate: class {
+protocol SearchTableViewControllerDelegate: AnyObject {
     func searchTableViewController(_ searchTableViewController: SearchTableViewController, didSelectSerchResult selection: PDFSelection)
 }
 

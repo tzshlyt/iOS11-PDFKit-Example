@@ -20,19 +20,17 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        toolView.frame = CGRect(x: 10, y: view.frame.height - 50, width: view.frame.width - 20, height: 40)
-        
-        pdfview = PDFView(frame: CGRect(x: 0, y: 50, width: view.frame.width, height: view.frame.height))
+        pdfview = PDFView()
         
         let url = Bundle.main.url(forResource: "sample", withExtension: "pdf")
         pdfdocument = PDFDocument(url: url!)
         
         pdfview.document = pdfdocument
-        pdfview.displayMode = PDFDisplayMode.singlePageContinuous
+        pdfview.displayMode = .singlePageContinuous
         pdfview.autoScales = true
         view.addSubview(pdfview)
         
-        pdfThumbView = PDFThumbnailView(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: 50))
+        pdfThumbView = PDFThumbnailView()
         pdfThumbView.layoutMode = .horizontal
         pdfThumbView.pdfView = pdfview
         pdfThumbView.backgroundColor = UIColor.red
@@ -44,6 +42,24 @@ class ViewController: UIViewController {
         toolView.thumbBtn.addTarget(self, action: #selector(thumbBtnClick), for: .touchUpInside)
         toolView.outlineBtn.addTarget(self, action: #selector(outlineBtnClick), for: .touchUpInside)
         toolView.searchBtn.addTarget(self, action: #selector(searchBtnClick), for: .touchUpInside)
+       
+        pdfThumbView.translatesAutoresizingMaskIntoConstraints = false
+        pdfThumbView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor).isActive = true
+        pdfThumbView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor).isActive = true
+        pdfThumbView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
+        pdfThumbView.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        
+        toolView.translatesAutoresizingMaskIntoConstraints = false
+        toolView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 10).isActive = true
+        toolView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -10).isActive = true
+        toolView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
+        toolView.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        
+        pdfview.translatesAutoresizingMaskIntoConstraints = false
+        pdfview.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor).isActive = true
+        pdfview.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor).isActive = true
+        pdfview.topAnchor.constraint(equalTo: pdfThumbView.bottomAnchor, constant: 0).isActive = true
+        pdfview.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
         
         let tapgesture = UITapGestureRecognizer(target: self, action: #selector(tapGesture(_:)))
         view.addGestureRecognizer(tapgesture)
@@ -51,7 +67,7 @@ class ViewController: UIViewController {
     
     @objc func tapGesture(_ gestureRecognizer: UITapGestureRecognizer) {
         UIView.animate(withDuration: CATransaction.animationDuration()) {
-            self.toolView.alpha = 1 - (self.toolView.alpha)
+            self.toolView.alpha = 1 - self.toolView.alpha
         }
     }
     
@@ -71,7 +87,7 @@ class ViewController: UIViewController {
         thumbnailGridViewController.delegate = self
         
         let nav = UINavigationController(rootViewController: thumbnailGridViewController)
-        self.present(nav, animated: false, completion:nil)
+        present(nav, animated: false, completion:nil)
     }
     
     @objc func outlineBtnClick(sender: UIButton) {

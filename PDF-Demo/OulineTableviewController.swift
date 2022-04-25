@@ -9,7 +9,7 @@
 import UIKit
 import PDFKit
 
-protocol OulineTableviewControllerDelegate: class{
+protocol OulineTableviewControllerDelegate: AnyObject {
     func oulineTableviewController(_ oulineTableviewController: OulineTableviewController,
                                    didSelectOutline outline: PDFOutline)
 }
